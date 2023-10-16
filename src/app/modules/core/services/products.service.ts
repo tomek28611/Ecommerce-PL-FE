@@ -18,7 +18,8 @@ export class ProductsService {
     itemsPerPage = 5,
     name: string | null = null,
     sortElement: string | null = null,
-    order: string | null = null
+    order: string | null = null,
+    category: string | null = null
 
   ): Observable<GetProductsResponse> {
     let params = new HttpParams()
@@ -26,18 +27,19 @@ export class ProductsService {
       .append('_limit', itemsPerPage);
 
       if (name) {
-        // const newName = encodeURIComponent(name);
         params = params.append('name_like', name);
       }
       
     if (sortElement) {
-      // const newName = encodeURIComponent(name);
       params = params.append('_sort', sortElement);
     }
 
     if (order) {
-      // const newName = encodeURIComponent(name);
       params = params.append('_order', order);
+    }
+
+    if (category) {
+      params = params.append('_category', category);
     }
 
     return this.http
