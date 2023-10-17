@@ -14,6 +14,14 @@ const routes: Routes = [
         (m) => m.ProductsModule
       ),
   },
+  {
+    path: 'administracja',
+    loadChildren: () =>
+      import('./modules/administration/administration.module').then(
+        (m) => m.AdministrationModule
+      ),
+  },
+
 ];
 
 

@@ -24,16 +24,26 @@
         </li>
 
 
-        <ng-container *ngIf='user$ | async; else notUser'>
+        <ng-container >
+          <!-- This 2 commented lines hide Admin and logout on menu   -->
+        <!-- *ngIf='user$ | async as user; else notUser' -->
+        
+          <li class="nav-item" >
+          <!-- *ngIf='isAdmin(user.role)' -->
+          
+            <a class="nav-link" aria-current="page" routerLink='/administracja/zarzadzaj' >Administracja</a>
+          </li>
           <li class='nav-item'>
             <button mat-raised-button color='primary' (click)='logout()'>Wyloguj się</button>
           </li>
         </ng-container>
+
         <ng-template #notUser>
           <li class='nav-item'>
             <a class="nav-link" aria-current="page" routerLink='login' routerLinkActive='active'>Logowanie</a>
           </li>
         </ng-template>
+
       </ul>
     </div>
   </div>

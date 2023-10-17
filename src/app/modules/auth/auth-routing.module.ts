@@ -5,11 +5,15 @@ import { RegisterComponent } from './components/register/register.component';
 import { AccountActivationComponent } from './components/account-activation/account-activation.component';
 import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
 import { PasswordRecoveryFormComponent } from './components/password-recovery-form/password-recovery-form.component';
-import { UnauthGuard } from '../core/guards/unauth.guard';
+// import { UnauthGuard } from '../core/guards/unauth.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, canActivate: [UnauthGuard]}, 
-  { path: 'register', component: RegisterComponent, canActivate: [UnauthGuard]},
+  { path: 'login', component: LoginComponent,
+  //  canActivate: [UnauthGuard]
+  }, 
+  { path: 'register', component: RegisterComponent,
+  //  canActivate: [UnauthGuard]
+  },
   { path: 'activation/:uid', component: AccountActivationComponent},
   { path: 'password-recovery', component: PasswordRecoveryComponent},
   { path: 'password-recovery/:uid', component: PasswordRecoveryFormComponent}
