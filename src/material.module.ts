@@ -5,6 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
     exports: [
         MatFormFieldModule,
@@ -12,7 +15,10 @@ import { MatSelectModule } from '@angular/material/select';
         MatButtonModule,
         MatPaginatorModule,
         MatAutocompleteModule,
-        MatSelectModule
+        MatSelectModule,
+        MatExpansionModule,
+        MatIconModule,
+    
       ],
     })
     
